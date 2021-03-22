@@ -1,4 +1,5 @@
 window.addEventListener("load", () => {
+  //DRAWING CANVAS
   const canvas = document.querySelector("#canvas");
   const ctx = canvas.getContext("2d");
 
@@ -34,4 +35,11 @@ window.addEventListener("load", () => {
   canvas.addEventListener("mousedown", startPosition);
   canvas.addEventListener("mouseup", finishedPosition);
   canvas.addEventListener("mousemove", draw);
+
+  //   //IMAGE CANVAS
+  //   const bottomCanvas = document.querySelector("#bottomCanvas");
+
+  //   //resizing
+  //   bottomCanvas.height = window.innerHeight;
+  //   bottomCanvas.width = window.innerWidth;
 });

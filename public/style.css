@@ -4,6 +4,67 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0px;
+  padding: 30px;
+  font-family: "Mukta";
+  overflow: hidden;
+  background: #313131;
+}
+
 #canvas {
-  border: 2px solid black;
+  box-shadow: -3px 2px 9px 6px black;
+  cursor: pointer;
+}
+/* 
+.background-image {
+  background-image: url("/assets/IMG_3963.JPG");
+  background-repeat: no-repeat;
+  width: 2000px;
+  height: 2000px;
+} */
+
+.tools {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 15px;
+}
+
+.tools .color-field {
+  height: 40px;
+  width: 40px;
+  min-height: 40px;
+  min-width: 40px;
+  cursor: pointer;
+  display: inline-block;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 2px solid white;
+  align-self: center;
+  margin: 0 15px;
+}
+
+.tools .button {
+  align-self: center;
+  width: 100px;
+  height: 40px;
+  border: 2px solid white;
+  cursor: pointer;
+  color: white;
+  background: #222;
+  font-weight: bold;
+  margin: 0 15px;
+}
+
+.color-picker {
+  align-self: center;
+  margin: 0 10px;
+  height: 50px;
+}
+
+.pen-range {
+  align-self: center;
+  margin: 0 10px;
 }
