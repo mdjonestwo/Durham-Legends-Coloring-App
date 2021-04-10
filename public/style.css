@@ -4,14 +4,22 @@
   box-sizing: border-box;
 }
 
+html,
+body,
+.canvasFrame,
+.container {
+  min-height: 100% !important;
+  height: 100%;
+}
+
 .canvasContainer {
-  max-width: 100vw;
-  max-height: 100vh;
+  width: 100%;
+  height: 100%;
   margin: 0px;
   padding: 30px;
   font-family: "Mukta";
   overflow: hidden;
-  background: #313131;
+  background: #91d1ff;
 }
 
 .canvasFrame {
@@ -25,8 +33,11 @@
   padding: 40px; */
   display: flex;
   justify-content: center;
-  box-shadow: -3px 2px 9px 6px black;
+  border: 5px solid #f7d134;
+
   cursor: pointer;
+  width: 400px;
+  height: 600px;
 }
 
 /* 
@@ -39,8 +50,14 @@
 */
 
 .left-button {
-  width: 300px;
+  width: 250px;
+  height: 50px;
   margin: 10px;
+  background-color: #f7d134;
+  color: white;
+  border-radius: 5%;
+  border: 2px solid #f7d134;
+  font-weight: bold;
 }
 
 .tools {
@@ -76,10 +93,11 @@
   align-self: center;
   width: 100px;
   height: 40px;
-  border: 2px solid white;
+  border: 2px solid #f7d134;
+  border-radius: 5%;
   cursor: pointer;
   color: white;
-  background: #222;
+  background: #f7d134;
   font-weight: bold;
   margin: 0 5px;
 }
@@ -88,6 +106,7 @@
   align-self: center;
   margin: 20px 0px;
   height: 50px;
+  width: 150px;
 }
 
 .pen-range {
@@ -96,13 +115,23 @@
 }
 
 .container {
-  background-color: #313131;
-  max-width: 100vw;
-  max-height: 100vh;
+  background-color: #91d1ff;
+  max-width: 100%;
+  max-height: 100%;
   color: white;
+}
+
+.navbar {
+  background-color: #91d1ff;
 }
 
 .carousel-size {
   height: 300px;
   width: 300px;
+}
+
+.container h1 {
+  padding-top: 300px;
+  padding-left: 50px;
+  font-size: 100px;
 }
