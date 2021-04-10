@@ -45,57 +45,88 @@
     <!--NAVend-->
 
     <div class="canvasContainer">
-      <div class="canvasFrame" style="width: 400px; height: 600px">
-        <img
-          id="canvasImage"
-          style="width: 400px; height: 600px; position: absolute"
-          src="../assets/IMG_3963.JPG"
-        />
+      <div class="row align-items-center">
+        <div class="col"></div>
+        <div class="col">
+          <div class="canvasFrame" style="width: 400px; height: 600px">
+            <img
+              id="canvasImage"
+              style="width: 400px; height: 600px; position: absolute"
+              src="../assets/IMG_3963.JPG"
+            />
 
-        <div class="canvasInnerFrame" style="opacity: 1; position: relative">
-          <canvas id="canvas"></canvas>
+            <div
+              class="canvasInnerFrame"
+              style="opacity: 1; position: relative"
+            >
+              <canvas id="canvas"></canvas>
+            </div>
+          </div>
         </div>
-      </div>
+        <div class="col">
+          <div class="tools">
+            <div class="color-section">
+              <div class="row justify-content-center">
+                <div
+                  onClick="change_color(this)"
+                  class="color-field"
+                  style="background-color: blue"
+                ></div>
+                <div
+                  onClick="change_color(this)"
+                  class="color-field"
+                  style="background-color: green"
+                ></div>
+              </div>
+              <div class="row justify-content-center">
+                <div
+                  onClick="change_color(this)"
+                  class="color-field"
+                  style="background-color: red"
+                ></div>
+                <div
+                  onClick="change_color(this)"
+                  class="color-field"
+                  style="background-color: orange"
+                ></div>
+              </div>
+              <div class="row justify-content-center">
+                <div
+                  onClick="change_color(this)"
+                  class="color-field"
+                  style="background-color: yellow"
+                ></div>
+                <div
+                  onClick="change_color(this)"
+                  class="color-field"
+                  style="background-color: purple"
+                ></div>
+              </div>
+            </div>
 
-      <div class="tools">
-        <button onClick="undo_last()" type="button" class="button">Undo</button>
-        <button onClick="clear_canvas()" type="button" class="button">
-          Clear
-        </button>
+            <input
+              type="color"
+              class="color-picker"
+              onInput="draw_color = this.value"
+            />
 
-        <div
-          onClick="change_color(this)"
-          class="color-field"
-          style="background-color: blue"
-        ></div>
-        <div
-          onClick="change_color(this)"
-          class="color-field"
-          style="background-color: green"
-        ></div>
-        <div
-          onClick="change_color(this)"
-          class="color-field"
-          style="background-color: red"
-        ></div>
-        <div
-          onClick="change_color(this)"
-          class="color-field"
-          style="background-color: yellow"
-        ></div>
-
-        <input
-          type="color"
-          class="color-picker"
-          onInput="draw_color = this.value"
-        />
-        <input
-          type="range"
-          min="1"
-          max="100"
-          class="pen-range"
-          onInput="draw_width = this.value"
-        />
+            <input
+              type="range"
+              min="1"
+              max="100"
+              class="pen-range"
+              onInput="draw_width = this.value"
+            />
+            <div class="tools-controls row justify-content-center">
+              <button onClick="undo_last()" type="button" class="button">
+                Undo
+              </button>
+              <button onClick="clear_canvas()" type="button" class="button">
+                Clear
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

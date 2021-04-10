@@ -14,9 +14,17 @@
   background: #313131;
 }
 
+.canvasFrame {
+  margin: auto;
+  width: 400px;
+  height: 600px;
+}
+
 #canvas {
   /* margin: 0px;
   padding: 40px; */
+  display: flex;
+  justify-content: center;
   box-shadow: -3px 2px 9px 6px black;
   cursor: pointer;
 }
@@ -33,8 +41,12 @@
 .tools {
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 15px;
+}
+
+.tools .color-section {
+  margin-bottom: 10px;
 }
 
 .tools .color-field {
@@ -49,7 +61,10 @@
   border-radius: 50%;
   border: 2px solid white;
   align-self: center;
-  margin: 0 15px;
+  margin: 0px 5px 3px 5px;
+}
+.tools-controls {
+  margin: 15px 0px 15px 0px;
 }
 
 .tools .button {
@@ -66,7 +81,7 @@
 
 .color-picker {
   align-self: center;
-  margin: 0 10px;
+  margin: 20px 0px;
   height: 50px;
 }
 
