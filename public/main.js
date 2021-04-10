@@ -98,28 +98,45 @@ function undo_last() {
   }
 }
 
+// function downloadCanvas() {
+//   // get canvas data
+//   var image = canvas.toDataURL();
+
+//   // create temporary link
+//   var tmpLink = document.createElement("a");
+//   tmpLink.download = "image.png"; // set the name of the download file
+//   tmpLink.href = image;
+
+//   // temporarily add link to body and initiate the download
+//   document.body.appendChild(tmpLink);
+//   tmpLink.click();
+//   document.body.removeChild(tmpLink);
+// }
+
+function openModal() {
+  const modal = document.querySelector(".modal");
+  modal.setAttribute("style", "display: block");
+}
+
+function closeModal() {
+  const modal = document.querySelector(".modal");
+  modal.setAttribute("style", "display: none");
+}
+
+var imageClicked;
+
 //Changing Background Image
 function changeImage(event) {
-  console.log(event.srcElement.id);
-  const imageClicked = event.srcElement.src;
+  console.log(event.srcElement.src);
+  imageClicked = event.srcElement.src;
+
+  return imageClicked;
+}
+
+function okBtn() {
   const canvasImage = document.getElementById("canvasImage");
   canvasImage.removeAttribute("src");
   canvasImage.setAttribute("src", imageClicked);
-  console.log(imageClicked);
   clear_canvas();
-}
-
-function downloadCanvas() {
-  // get canvas data
-  var image = canvas.toDataURL();
-
-  // create temporary link
-  var tmpLink = document.createElement("a");
-  tmpLink.download = "image.png"; // set the name of the download file
-  tmpLink.href = image;
-
-  // temporarily add link to body and initiate the download
-  document.body.appendChild(tmpLink);
-  tmpLink.click();
-  document.body.removeChild(tmpLink);
+  closeModal();
 }
