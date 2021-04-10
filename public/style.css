@@ -4,7 +4,9 @@
   box-sizing: border-box;
 }
 
-body {
+.canvasContainer {
+  max-width: 100vw;
+  max-height: 100vh;
   margin: 0px;
   padding: 30px;
   font-family: "Mukta";
@@ -13,6 +15,8 @@ body {
 }
 
 #canvas {
+  /* margin: 0px;
+  padding: 40px; */
   box-shadow: -3px 2px 9px 6px black;
   cursor: pointer;
 }
@@ -69,4 +73,16 @@ body {
 .pen-range {
   align-self: center;
   margin: 0 10px;
+}
+
+.container {
+  background-color: #313131;
+  max-width: 100vw;
+  max-height: 100vh;
+  color: white;
+}
+
+.carousel-size {
+  height: 300px;
+  width: 300px;
 }

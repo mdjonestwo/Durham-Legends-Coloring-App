@@ -1,10 +1,23 @@
+//COLORING APP FUNCTIONALITY
 const canvas = document.getElementById("canvas");
-canvas.width = window.innerWidth - 60;
-canvas.height = 400;
+canvas.width = 400;
+canvas.height = 600;
 
 let context = canvas.getContext("2d");
+
+// make_base();
+
+// function make_base() {
+//   base_image = new Image();
+//   base_image.src = "/assets/IMG_3963.JPG";
+//   base_image.onload = function () {
+//     context.drawImage(base_image, 0, 0);
+//   };
+// }
+
 let start_background_color = "white";
 context.fillStyle = start_background_color;
+context.globalAlpha = 0.5;
 context.fillRect(0, 0, canvas.width, canvas.height);
 
 let draw_color = "black";
@@ -27,22 +40,23 @@ canvas.addEventListener("mousedown", start, false);
 canvas.addEventListener("mousemove", draw, false);
 canvas.addEventListener("mouseup", stop, false);
 
+const offSetX = 10;
+const offSetY = 78.5;
+
 function start(event) {
+  const canvasX = canvas.getBoundingClientRect().left;
+  const canvasY = canvas.getBoundingClientRect().top;
   is_drawing = true;
   context.beginPath();
-  context.moveTo(
-    event.clientX - canvas.offsetLeft,
-    event.clientY - canvas.offsetTop
-  );
+  context.moveTo(event.clientX - canvasX, event.clientY - canvasY);
   event.preventDefault();
 }
 
 function draw(event) {
   if (is_drawing) {
-    context.lineTo(
-      event.clientX - canvas.offsetLeft,
-      event.clientY - canvas.offsetTop
-    );
+    const canvasX = canvas.getBoundingClientRect().left;
+    const canvasY = canvas.getBoundingClientRect().top;
+    context.lineTo(event.clientX - canvasX, event.clientY - canvasY);
     context.strokeStyle = draw_color;
     context.lineWidth = draw_width;
     context.lineCap = "round";
