@@ -97,3 +97,13 @@ function undo_last() {
     context.putImageData(restore_array[index], 0, 0);
   }
 }
+
+//Changing Background Image
+function changeImage(event) {
+  console.log(event.srcElement.id);
+  const imageClicked = event.srcElement.src;
+  const canvasImage = document.getElementById("canvasImage");
+  canvasImage.removeAttribute("src");
+  canvasImage.setAttribute("src", imageClicked);
+  console.log(imageClicked);
+}

@@ -47,6 +47,7 @@
     <div class="canvasContainer">
       <div class="canvasFrame" style="width: 400px; height: 600px">
         <img
+          id="canvasImage"
           style="width: 400px; height: 600px; position: absolute"
           src="../assets/IMG_3963.JPG"
         />
@@ -107,7 +108,7 @@
       <div class="carousel-inner">
         <div class="carousel-item carousel-size active">
           <img
-            onClick=""
+            onClick="changeImage(event)"
             src="https://res.cloudinary.com/growthfrequency/image/upload/v1616457423/DurhamLegendsColoringBook/Ann_Attwater_DIGITAL_COLORING_SHEET_wlsiqh.jpg"
             class="d-block w-100"
             alt="..."
@@ -115,6 +116,7 @@
         </div>
         <div class="carousel-item carousel-size">
           <img
+            onClick="changeImage(event)"
             src="https://res.cloudinary.com/growthfrequency/image/upload/v1616454998/DurhamLegendsColoringBook/Aaron_Moore_DIGITAL_COLORING_SHEET_k03jaj.jpg"
             class="d-block w-100 image"
             alt="..."
@@ -122,6 +124,7 @@
         </div>
         <div class="carousel-item carousel-size">
           <img
+            onClick="changeImage(event)"
             src="https://res.cloudinary.com/growthfrequency/image/upload/v1616492464/DurhamLegendsColoringBook/Baba_Chuck_DIGITAL_COLORING_SHEET_rhx04h.jpg"
             class="d-block w-100"
             alt="..."
