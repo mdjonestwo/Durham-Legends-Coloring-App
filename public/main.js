@@ -106,4 +106,5 @@ function changeImage(event) {
   canvasImage.removeAttribute("src");
   canvasImage.setAttribute("src", imageClicked);
   console.log(imageClicked);
+  clear_canvas();
 }
