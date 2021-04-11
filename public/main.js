@@ -7,11 +7,18 @@ let context = canvas.getContext("2d");
 
 let start_background_color = "white";
 context.fillStyle = start_background_color;
-context.globalAlpha = 0.5;
+// context.globalAlpha = 0.5;
+var img = new Image();
+img.src =
+  "https://res.cloudinary.com/growthfrequency/image/upload/v1616492464/DurhamLegendsColoringBook/Baba_Chuck_DIGITAL_COLORING_SHEET_rhx04h.jpg";
+img.crossOrigin = "anonymous";
+img.onload = function () {
+  context.drawImage(img, 0, 0, 3024, 4032, 0, 0, 400, 600);
+};
 context.fillRect(0, 0, canvas.width, canvas.height);
 
 let draw_color = "black";
-let draw_width = "2";
+let draw_width = "1";
 let is_drawing = false;
 
 let restore_array = [];
@@ -109,23 +116,23 @@ function changeImage(event) {
 }
 
 function okBtn() {
-  const canvasImage = document.getElementById("canvasImage");
-  canvasImage.removeAttribute("src");
-  canvasImage.setAttribute("src", imageClicked);
+  img.removeAttribute("src");
+  img.setAttribute("src", imageClicked);
   clear_canvas();
   closeModal();
 }
 
-function preview() {
-  html2canvas(document.getElementById("canvasSaver")).then(function (canvas) {
-    document.body.appendChild(canvas);
-  });
-}
-
 function download() {
-  domtoimage
-    .toBlob(document.getElementById("canvasSaver"))
-    .then(function (blob) {
-      window.saveAs(blob, "my-node.png");
-    });
+  var saveImg = canvas.toDataURL("image/png");
+  //document.write('<img src ="' + saveImg + '"/>');
+
+  // create temporary link
+  var tmpLink = document.createElement("a");
+  tmpLink.download = "durham-legend.png"; // set the name of the download file
+  tmpLink.href = saveImg;
+
+  // temporarily add link to body and initiate the download
+  document.body.appendChild(tmpLink);
+  tmpLink.click();
+  document.body.removeChild(tmpLink);
 }
