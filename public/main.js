@@ -5,16 +5,6 @@ canvas.height = 600;
 
 let context = canvas.getContext("2d");
 
-// make_base();
-
-// function make_base() {
-//   base_image = new Image();
-//   base_image.src = "/assets/IMG_3963.JPG";
-//   base_image.onload = function () {
-//     context.drawImage(base_image, 0, 0);
-//   };
-// }
-
 let start_background_color = "white";
 context.fillStyle = start_background_color;
 context.globalAlpha = 0.5;
@@ -98,21 +88,6 @@ function undo_last() {
   }
 }
 
-// function downloadCanvas() {
-//   // get canvas data
-//   var image = canvas.toDataURL();
-
-//   // create temporary link
-//   var tmpLink = document.createElement("a");
-//   tmpLink.download = "image.png"; // set the name of the download file
-//   tmpLink.href = image;
-
-//   // temporarily add link to body and initiate the download
-//   document.body.appendChild(tmpLink);
-//   tmpLink.click();
-//   document.body.removeChild(tmpLink);
-// }
-
 function openModal() {
   const modal = document.querySelector(".modal");
   modal.setAttribute("style", "display: block");
@@ -139,4 +114,18 @@ function okBtn() {
   canvasImage.setAttribute("src", imageClicked);
   clear_canvas();
   closeModal();
+}
+
+function preview() {
+  html2canvas(document.getElementById("canvasSaver")).then(function (canvas) {
+    document.body.appendChild(canvas);
+  });
+}
+
+function download() {
+  domtoimage
+    .toBlob(document.getElementById("canvasSaver"))
+    .then(function (blob) {
+      window.saveAs(blob, "my-node.png");
+    });
 }
