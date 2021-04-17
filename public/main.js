@@ -7,15 +7,16 @@ let context = canvas.getContext("2d");
 
 let start_background_color = "white";
 context.fillStyle = start_background_color;
-// context.globalAlpha = 0.5;
+
 var img = new Image();
-img.src =
-  "https://res.cloudinary.com/growthfrequency/image/upload/v1616492464/DurhamLegendsColoringBook/Baba_Chuck_DIGITAL_COLORING_SHEET_rhx04h.jpg";
+img.src = "";
 img.crossOrigin = "anonymous";
 img.onload = function () {
   context.drawImage(img, 0, 0, 3024, 4032, 0, 0, 400, 600);
 };
 context.fillRect(0, 0, canvas.width, canvas.height);
+
+// context.globalAlpha = 0.5;
 
 let draw_color = "black";
 let draw_width = "1";
@@ -49,6 +50,8 @@ function start(event) {
   event.preventDefault();
 }
 
+console.log(index);
+
 function draw(event) {
   if (is_drawing) {
     const canvasX = canvas.getBoundingClientRect().left;
@@ -63,6 +66,7 @@ function draw(event) {
 }
 
 function stop(event) {
+  console.log("stopStart" + index);
   if (is_drawing) {
     context.stroke();
     context.closePath();
@@ -74,6 +78,8 @@ function stop(event) {
     restore_array.push(context.getImageData(0, 0, canvas.width, canvas.height));
     index += 1;
   }
+  console.log("stopeEnd" + index);
+  console.log(restore_array);
 }
 
 function clear_canvas() {
@@ -86,13 +92,21 @@ function clear_canvas() {
 }
 
 function undo_last() {
-  if (index <= 0) {
-    clear_canvas();
+  console.log("undoStart" + index);
+  if (index === -1) {
+    index += 0;
+    img.onload();
+  } else if (index === 0) {
+    restore_array.pop();
+    img.onload();
+    index -= 1;
   } else {
     index -= 1;
     restore_array.pop();
     context.putImageData(restore_array[index], 0, 0);
   }
+  console.log("undoEnd" + index);
+  console.log(restore_array);
 }
 
 function openModal() {
