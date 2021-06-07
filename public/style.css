@@ -149,7 +149,7 @@ h1{
   width: 300px;
 }
 
-button{
+.home-btn{
   border: 1px solid #707070;
   color: #91d1ff;
   background-color:#fff;
@@ -157,7 +157,7 @@ button{
   font-size: 25px;
 }
 
-button:hover{
+.home-btn:hover{
   color: #fff;
   background-color: #91d1ff;
 }
@@ -293,6 +293,39 @@ button:hover{
   width: 350px;
 }
 
+#topProducts .product{
+  background-image: url("./assets/gf-tshirt-front.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  width: 350px;
+}
+
+#topProducts .product:hover{
+  background-image: url("./assets/gf-tshirt-back.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  width: 350px;
+}
+
+#topProducts a{
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+}
+
+#topProducts {
+  font-size: 20px;
+}
+
+#topProducts .product-img{
+  display:flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+}
 
 .about {
   width: 100%;
@@ -337,6 +370,11 @@ button:hover{
 
 .contact{
   padding: 75px 350px;
+  color: #91d1ff;
+}
+
+.contact a{
+  text-decoration: none;
   color: #91d1ff;
 }
 
