@@ -14,7 +14,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Coloring App</title>
   </head>
-  <body>
+  <body id="coloringApp">
+    <div class="not-ready">
+      <h1>The mobile version is not available yet. Please visit on a desktop. <br>Thanks.</h1>
+      <div class="btn-container">
+        <button class="home-btn"><a href="../index.html">Home</a></button> 
+      </div>
+    </div>
     <!--NAVstart-->
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid">
@@ -61,10 +67,9 @@
           </div>
         </div>
         <div class="col" id="canvasSaver">
-          <div class="canvasFrame" style="width: 400px; height: 600px">
+          <div class="canvasFrame">
             <img
               id="canvasImage"
-              style="width: 400px; height: 600px; position: absolute"
               src=""
             />
 
