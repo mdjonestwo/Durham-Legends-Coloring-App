@@ -5,6 +5,10 @@
 }
 
 /* Coloring App Styles */
+.not-ready{
+  display: none;
+}
+
 html,
 body,
 .canvasFrame,
@@ -12,7 +16,6 @@ body,
   min-height: 100% !important;
   height: 100%;
 }
-
 a{
   text-decoration: none;
   color: #91d1ff;
@@ -437,6 +440,40 @@ footer .title{
 }
 
 @media (min-width: 0px) and (max-width: 373px) {
+  /* ////////////////COLORING APP/////////////// */
+
+ #coloringApp{
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden;
+}
+
+.not-ready{
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #91d1ff;
+  z-index: 5;
+}
+
+.not-ready .btn-container{
+  display: flex;
+  justify-content: center;
+}
+#canvasImage{
+  width: 0;
+  height: 0;
+};
+
+.canvasContainer{
+  padding: 0;
+}
+
+
+/* ////////////////////HOMEPAGE//////////////// */
   h1{
     font-size: 44px;
   }
@@ -519,6 +556,8 @@ footer .title{
 }
 
 @media (min-width: 374px) and (max-width: 767px) {
+/* ////////////////COLORING APP/////////////// */
+
  #coloringApp{
     height: 100%;
     width: 100%;
@@ -532,7 +571,7 @@ footer .title{
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #f7d134;
+    background-color: #91d1ff;;
     z-index: 5;
   }
   
@@ -550,7 +589,7 @@ footer .title{
   }
 
 
-
+/* ////////////////////HOMEPAGE//////////////// */
   h1{
     font-size: 44px;
   }
@@ -632,6 +671,41 @@ footer .title{
 }
 
 @media (min-width: 768px) and (max-width: 1300px) {
+
+  /* ////////////////COLORING APP/////////////// */
+
+ #coloringApp{
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden;
+}
+
+.not-ready{
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #91d1ff;
+  z-index: 5;
+}
+
+.not-ready .btn-container{
+  display: flex;
+  justify-content: center;
+}
+#canvasImage{
+  width: 0;
+  height: 0;
+};
+
+.canvasContainer{
+  padding: 0;
+}
+
+
+/* ////////////////////HOMEPAGE//////////////// */
   #highlightedProduct h3 {
     font-size: 60px;
     padding-bottom: 25px;
