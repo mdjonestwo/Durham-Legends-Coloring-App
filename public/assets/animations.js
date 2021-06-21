@@ -14,7 +14,19 @@ jumboTL.fromTo(
         opacity: 1,
         duration: 2
     }
-);
+).fromTo(
+    "#jumbo h2",
+    {
+        y: 300,
+        opacity: 0
+    
+    },
+    {
+        y: 0,
+        opacity: 1,
+        duration: 2
+    }
+)
 
 
 // let jumboScene = new ScrollMagic.Scene({

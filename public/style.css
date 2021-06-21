@@ -359,7 +359,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
 
 .about {
   width: 100%;
-  background-color: #FFE796;
+  background-color: #fff;
   color: #91d1ff;
   padding: 100px 350px;
 }
@@ -401,6 +401,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
 .contact{
   padding: 75px 350px;
   color: #91d1ff;
+  background-color: #FFE796;
 }
 
 .contact a{
